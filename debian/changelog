@@ -1,0 +1,274 @@
+python-mkdocs (1.1.2+dfsg-deepin1) unstable; urgency=medium
+
+  * Fix compatibility with Python 3.10.
+
+ -- Changwei Miao <miaochangwei@uniontech.com>  Mon, 26 Sep 2022 14:41:49 +0800
+
+python-mkdocs (1.1.2+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository, Repository-Browse.
+
+  [ Dmitry Shachnev ]
+  * Backport upstream patch to fix test failure with Python ≥ 3.9.5
+    (closes: #997307).
+  * Remove override_dh_auto_clean target in favor of debian/clean.
+  * Bump Standards-Version to 4.6.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 24 Oct 2021 12:53:59 +0300
+
+python-mkdocs (1.1.2+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * dh_mkdocs: Add node-jquery to the list of recognized packages
+    (closes: #968682).
+  * Update Files-Excluded for the new release.
+  * Drop debian/patches/0008-Fix-FTBFS.patch, no longer needed.
+  * Rebase other patches.
+  * Update symlinks from Bootstrap 3 and Bootswatch to Bootstrap 4.
+  * Bump python3-jinja2 and python3-markdown required versions.
+  * Remove Lunr.py support, it is not packaged in Debian.
+  * Remove unused python3-mock and python3-watchdog build-dependencies.
+  * Add missing theme.js and fonts symlinks for the readthedocs theme.
+  * Update mkdocs.lintian-overrides for the new readthedocs template.
+  * Update dh_mkdocs for switch to Bootstrap 4.
+  * Make toc.html look better with default Bootstrap theme. (Bootswatch
+    is not packaged in Debian for Bootstrap 4.)
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 28 Aug 2020 21:30:40 +0300
+
+python-mkdocs (1.0.4+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+
+  [ Lukas Märdian ]
+  * Adopt link target of font-awesome files
+    - fonts-font-awesome 5.0.10+really4.7.0~dfsg-2 provides only OpenType
+      and TrueType under /usr/share/fonts/
+  * Fix FTBFS (Closes: #963337)
+  * Add integration test to check for correct (font) links
+
+  [ Dmitry Shachnev ]
+  * Bump Standards-Version to 4.5.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 08 Jul 2020 14:18:20 +0300
+
+python-mkdocs (1.0.4+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Disable non-English search support. The lunr-languages library is
+    unmaintained upstream and incompatible with the latest lunr.js, which
+    we are going to use.
+  * Also remove lunr-languages from the tarball, these files are not in
+    the preferred form of modification.
+  * Refresh 0001-Use-themes-from-usr-share-mkdocs-themes.patch.
+  * Add dh_mkdocs helper script, that can automatically symlink static
+    files and remove usage of external highlight.js.
+  * Call dh_mkdocs during build to fixup highlight.js usage.
+  * Remove usage of fonts.googleapis.com in readthedocs theme.
+  * Use packaged libjs-lunr.
+  * Override false-positive Lintian warning about privacy-breach-generic
+    in the theme templates (it is not present in the built documentation).
+  * Upload to unstable (closes: #907256).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 19 Dec 2018 13:27:22 +0300
+
+python-mkdocs (1.0.2+dfsg-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update Files-Excluded in preparation for packaging 1.0 release.
+  * Drop patches, applied upstream:
+    - 0001-Do-not-specify-maximum-version-of-tornado.patch
+    - 0003-Make-test_doc_dir_in_site_dir-work-with-custom-build.patch
+    - 0007-Make-test_deploy_error-pass-when-Git-is-not-installe.patch
+  * Refresh, rebase and renumber other patches.
+  * Disable the Markdown GitHub links extension until it is packaged.
+  * Stop removing highlight.js/LICENSE, it is no longer shipped.
+  * Disable a test line that asserts that the fonts directory exists,
+    it is not the case with our repacked tarballs.
+  * In mkdocs-doc, replace usage of external highlight.js with packaged
+    version using sed.
+  * Update mkdocs.links and mkdocs-doc.links for the new release.
+  * Drop no longer needed dependencies on mustache and requirejs.
+  * Suggest nodejs, needed for pre-building search index.
+  * Drop debian/missing-sources/lunr.js, upstream now ships non-minified
+    version on lunr.
+  * Update debian/copyright.
+  * Add mkdocs.egg-info/ to debian/clean.
+  * Drop debian/py3dist-overrides, no longer needed.
+  * Stop documenting the removed json command in the manpage.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 25 Aug 2018 16:05:36 +0300
+
+python-mkdocs (0.17.5+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (fixes Python 3.7 compatibility).
+  * Refresh 0002-Use-themes-from-usr-share-mkdocs-themes.patch.
+  * Do not install tests.
+  * Bump Standards-Version to 4.1.5, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 06 Jul 2018 23:07:03 +0300
+
+python-mkdocs (0.17.4+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Symlink bootstrap-custom.min.css to the version of Bootstrap from
+    Cerulean theme of bootswatch package (closes: #901741). It was
+    originally copied from version 3.0.3+1 of bootswatch.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 22 Jun 2018 13:44:41 +0300
+
+python-mkdocs (0.17.4+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Ship our own version of /usr/bin/mkdocs script.
+    We cannot rely on entry points, because pkg_resources import must
+    happen after sys.path is altered in mkdocs/__init__.py. If it happens
+    earlier then mkdocs will not see the custom themes.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 11 Jun 2018 10:16:31 +0300
+
+python-mkdocs (0.17.3+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Refresh 0002-Use-themes-from-usr-share-mkdocs-themes.patch.
+  * Update upstream URLs in debian/copyright and debian/watch.
+  * Do not specify maximum version of Tornado module (allow 5.x).
+  * Add a patch to make the tests pass when the current directory name
+    is different from ‘mkdocs’.
+  * Run upstream tests during build.
+  * Build-Depend on dh-python ≥ 3.20180313, for testfiles feature.
+  * Replace all JS, CSS files and fonts in mkdocs and mkdocs-doc with
+    symlinks to packaged versions (closes: #832360).
+  * Simplify the command to build docs, remove the custom script.
+  * Remove privacy breaches in mkdocs-doc package.
+  * Prevent search_index.json from being compressed.
+  * Disable use_directory_urls configuration option, to make it easier
+    to browse the documentation locally.
+  * Remove trailing whitespace in debian/copyright.
+  * Add build-dependency on python3-mock.
+  * Add *.md files to the MANIFEST to make the tests pass.
+  * Export LC_ALL=C.UTF-8 globally to fix more tests failures.
+  * Make test_deploy_error pass when Git is not installed.
+  * Remove mkdocs-bootstrap and mkdocs-bootswatch build-dependencies.
+    They are not needed to build mkdocs since version 0.16.0.
+  * Disable two scripts from third-party websites, needed only for IE 8.
+  * Break mkdocs-bootstrap < 0.2.
+  * Repack the tarball without minified JS/CSS files and fonts.
+  * Use https protocol in the Homepage field.
+  * Update to debhelper compatibility level 11.
+  * Bump Standards-Version to 4.1.4, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 25 May 2018 16:08:45 +0300
+
+python-mkdocs (0.16.3-2) unstable; urgency=medium
+
+  * Team upload
+  * Upload to unstable
+
+ -- Antonio Terceiro <terceiro@debian.org>  Tue, 19 Dec 2017 14:54:48 -0200
+
+python-mkdocs (0.16.3-1) experimental; urgency=medium
+
+  * Team upload
+
+  [ Brian May ]
+  * New upstream version.
+  * Bump Build-Dependency on python-livereload to >= 2.5.1-1~
+
+  [ Antonio Terceiro ]
+  * debian/copyright: fix typo (themese -> themes)
+  * Update standards version to 4.1.2; no changes needed.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Tue, 19 Dec 2017 11:01:26 -0200
+
+python-mkdocs (0.16.1-1) experimental; urgency=medium
+
+  * New upstream version. Closes: #852078.
+
+ -- Brian May <bam@debian.org>  Sat, 11 Mar 2017 10:55:27 +1100
+
+python-mkdocs (0.15.3-5) unstable; urgency=medium
+
+  * Support Reproducible builds. Closes: #831648.
+
+ -- Brian May <bam@debian.org>  Fri, 29 Jul 2016 08:12:18 +1000
+
+python-mkdocs (0.15.3-4) unstable; urgency=medium
+
+  * Ensure build depends get generated correctly. Closes: #829656.
+
+ -- Brian May <bam@debian.org>  Fri, 15 Jul 2016 18:25:17 +1000
+
+python-mkdocs (0.15.3-3) unstable; urgency=medium
+
+  * Look for theme files under /usr/share. Closes: #820783.
+
+ -- Brian May <bam@debian.org>  Wed, 11 May 2016 10:45:56 +1000
+
+python-mkdocs (0.15.3-2) unstable; urgency=medium
+
+  * Forgot to remove UNRELEASED from changelog. Retry.
+
+ -- Brian May <bam@debian.org>  Mon, 02 May 2016 16:26:17 +1000
+
+python-mkdocs (0.15.3-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Brian May <bam@debian.org>  Mon, 02 May 2016 16:26:11 +1000
+
+python-mkdocs (0.14.0-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Add missing Vcs-* headers.
+  * Fix debian/watch file.
+
+ -- Brian May <bam@debian.org>  Wed, 14 Oct 2015 08:32:17 +1100
+
+python-mkdocs (0.11.1-3) unstable; urgency=medium
+
+  * Fix typo in suggests. Closes: #782597.
+  * Move to text section. Closes: #782756.
+
+ -- Brian May <bam@debian.org>  Thu, 23 Apr 2015 15:10:07 +1000
+
+python-mkdocs (0.11.1-2) unstable; urgency=medium
+
+  * Add OFL-1.1 to debian/copyright.
+  * Initial Debian upload. (Closes: #778269)
+
+ -- Brian May <bam@debian.org>  Mon, 13 Apr 2015 15:08:23 +1000
+
+python-mkdocs (0.11.1-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Brian May <bam@debian.org>  Fri, 13 Feb 2015 10:27:40 +1100

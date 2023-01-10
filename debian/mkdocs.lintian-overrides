@@ -1,0 +1,3 @@
+# dh_mkdocs replaces these URLs with local ones in packaged documentation
+mkdocs: privacy-breach-generic usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/base.html [*highlight.js*] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js*)
+mkdocs: privacy-breach-generic usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/base.html [*highlight.js*] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js*)

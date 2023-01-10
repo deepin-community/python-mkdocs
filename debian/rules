@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export PYBUILD_DESTDIR_python3=debian/mkdocs/
+export PYBUILD_TEST_ARGS=-s mkdocs/tests -p "*_tests.py"
+export LC_ALL=C.UTF-8
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+	PYTHONPATH=. python3 -m mkdocs build -d docs.debian/html
+	rm -rf docs.debian/html/__pycache__
+
+override_dh_auto_install:
+	dh_auto_install
+	rm debian/mkdocs/usr/bin/mkdocs
+	find debian -name LICENSE -exec rm -f {} \;;
+	find debian -type d -empty -delete
+
+override_dh_installman:
+	pod2man -c Debhelper -r '' debian/scripts/dh_mkdocs debian/dh_mkdocs.1
+	dh_installman
+
+override_dh_installdocs:
+	dh_installdocs
+	./debian/scripts/dh_mkdocs
+
+override_dh_compress:
+	dh_compress -Xsearch_index.json

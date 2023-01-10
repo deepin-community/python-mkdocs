@@ -1,0 +1,121 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Sat, 1 Dec 2018 12:51:11 +0300
+Subject: Disable non-English search support
+
+The lunr-languages library is unmaintained and incompatible with the
+latest version of lunr, which we are going to use.
+---
+ docs/user-guide/configuration.md        | 46 ---------------------------------
+ mkdocs/contrib/search/prebuild-index.js | 14 ----------
+ mkdocs/tests/search_tests.py            |  2 ++
+ 3 files changed, 2 insertions(+), 60 deletions(-)
+
+diff --git a/docs/user-guide/configuration.md b/docs/user-guide/configuration.md
+index ff703b7..994282c 100644
+--- a/docs/user-guide/configuration.md
++++ b/docs/user-guide/configuration.md
+@@ -518,49 +518,6 @@ plugins:
+ 
+   **default**: 3
+ 
+-##### **lang**
+-
+-A list of languages to use when building the search index as identified by their
+-[ISO 639-1] language codes. With [Lunr Languages], the following languages are
+-supported:
+-
+-* `ar`: Arabic
+-* `da`: Danish
+-* `nl`: Dutch
+-* `en`: English
+-* `fi`: Finnish
+-* `fr`: French
+-* `de`: German
+-* `hu`: Hungarian
+-* `it`: Italian
+-* `ja`: Japanese
+-* `no`: Norwegian
+-* `pt`: Portuguese
+-* `ro`: Romanian
+-* `ru`: Russian
+-* `es`: Spanish
+-* `sv`: Swedish
+-* `th`: Thai
+-* `tr`: Turkish
+-* `vi`: Vietnamese
+-
+-You may [contribute additional languages].
+-
+-!!! Warning
+-
+-    While search does support using multiple languages together, it is best not
+-    to add additional languages unless you really need them. Each additional
+-    language adds significant bandwidth requirements and uses more browser
+-    resources. Generally it is best to keep each instance of MkDocs to a single
+-    language.
+-
+-!!! Note
+-
+-    Lunr Languages does not currently include support for Chinese or other Asian
+-    languages. However, some users have reported decent results using Japanese.
+-
+-**default**: `['en']`
+-
+ ##### **prebuild_index**
+ 
+ Optionally generates a pre-built index of all pages, which provides some
+@@ -604,9 +561,6 @@ report it on [Lunr.py's issues] and fall back to the Node.js version.
+ [extra_css]: #extra_css
+ [Plugins]: plugins.md
+ [lunr.js]: https://lunrjs.com/
+-[ISO 639-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+-[Lunr Languages]: https://github.com/MihaiValentin/lunr-languages#lunr-languages-----
+-[contribute additional languages]: https://github.com/MihaiValentin/lunr-languages/blob/master/CONTRIBUTING.md
+ [Node.js]: https://nodejs.org/
+ [Lunr.py]: http://lunr.readthedocs.io/
+ [Lunr.py's issues]: https://github.com/yeraydiazdiaz/lunr.py/issues
+diff --git a/mkdocs/contrib/search/prebuild-index.js b/mkdocs/contrib/search/prebuild-index.js
+index ae26da4..a23a033 100644
+--- a/mkdocs/contrib/search/prebuild-index.js
++++ b/mkdocs/contrib/search/prebuild-index.js
+@@ -15,20 +15,6 @@ stdin.on('end', function () {
+       lang = ['en'];
+ 
+   if (data.config) {
+-    if (data.config.lang && data.config.lang.length) {
+-      lang = data.config.lang;
+-      if (lang.length > 1 || lang[0] !== "en") {
+-        require('./lunr-language/lunr.stemmer.support')(lunr);
+-        if (lang.length > 1) {
+-          require('./lunr-language/lunr.multi')(lunr);
+-        }
+-        for (var i=0; i < lang.length; i++) {
+-          if (lang[i] != 'en') {
+-            require('./lunr-language/lunr.' + lang[i])(lunr);
+-          }
+-        }
+-      }
+-    }
+     if (data.config.separator && data.config.separator.length) {
+       lunr.tokenizer.separator = new RegExp(data.config.separator);
+     }
+diff --git a/mkdocs/tests/search_tests.py b/mkdocs/tests/search_tests.py
+index 9953762..fe4ecf0 100644
+--- a/mkdocs/tests/search_tests.py
++++ b/mkdocs/tests/search_tests.py
+@@ -34,6 +34,7 @@ class SearchConfigTests(unittest.TestCase):
+         value = option.validate(['en'])
+         self.assertEqual(['en'], value)
+ 
++    @unittest.expectedFailure
+     def test_lang_multi_list(self):
+         option = search.LangOption()
+         value = option.validate(['en', 'es', 'fr'])
+@@ -67,6 +68,7 @@ class SearchPluginTests(unittest.TestCase):
+         self.assertEqual(errors, [])
+         self.assertEqual(warnings, [])
+ 
++    @unittest.expectedFailure
+     def test_plugin_config_lang(self):
+         expected = {
+             'lang': ['es'],

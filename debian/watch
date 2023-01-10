@@ -1,0 +1,3 @@
+version=3
+opts=dversionmangle=s/\+dfsg//,repacksuffix=+dfsg \
+https://github.com/mkdocs/mkdocs/tags .*/(\d[\d\.]+)\.tar\.gz

@@ -1,0 +1,21 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Thu, 27 Aug 2020 20:45:29 +0300
+Subject: Make toc.html look better with default Bootstrap theme
+
+---
+ mkdocs/themes/mkdocs/toc.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mkdocs/themes/mkdocs/toc.html b/mkdocs/themes/mkdocs/toc.html
+index 89223f8..e1f9f41 100644
+--- a/mkdocs/themes/mkdocs/toc.html
++++ b/mkdocs/themes/mkdocs/toc.html
+@@ -16,7 +16,7 @@
+             </li>
+         {%- endif %}
+     {%- endmacro %}
+-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
++    <div id="toc-collapse" class="navbar-collapse collapse card bg-light">
+         <ul class="nav flex-column">
+         {%- for item in page.toc %}
+             {{ toc_item(item) }}

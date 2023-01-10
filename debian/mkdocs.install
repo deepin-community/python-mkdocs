@@ -1,0 +1,3 @@
+debian/mkdocs.pm usr/share/perl5/Debian/Debhelper/Sequence
+debian/scripts/dh_mkdocs usr/bin
+debian/scripts/mkdocs usr/bin
