@@ -1,0 +1,19 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Sun, 20 May 2018 01:13:35 +0300
+Subject: Disable use_directory_urls configuration option
+
+To make it easier to browse the documentation locally.
+---
+ mkdocs.yml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/mkdocs.yml b/mkdocs.yml
+index 30e0ad4..ae16469 100644
+--- a/mkdocs.yml
++++ b/mkdocs.yml
+@@ -43,3 +43,5 @@ copyright: Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom
+ 
+ plugins:
+     - search
++
++use_directory_urls: false

@@ -1,0 +1,43 @@
+From: Álvaro Mondéjar <mondejar1994@gmail.com>
+Date: Sat, 8 May 2021 15:40:37 +0200
+Subject: Update IpAddress tests for Python3.9.5
+
+(cherry picked from commit 775d506c63d4b57553110ee56b8c1f94d336e1f7)
+---
+ mkdocs/tests/config/config_options_tests.py | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/mkdocs/tests/config/config_options_tests.py b/mkdocs/tests/config/config_options_tests.py
+index 7d567fb..9c8607b 100644
+--- a/mkdocs/tests/config/config_options_tests.py
++++ b/mkdocs/tests/config/config_options_tests.py
+@@ -131,6 +131,10 @@ class IpAddressTest(unittest.TestCase):
+         self.assertEqual(value.host, '127.0.0.1')
+         self.assertEqual(value.port, 8000)
+ 
++    @unittest.skipIf(
++        sys.version_info >= (3, 9, 5),
++        "Leading zeros not allowed in IP addresses since Python3.9.5",
++    )
+     def test_IP_normalization(self):
+         addr = '127.000.000.001:8000'
+         option = config_options.IpAddress(default=addr)
+@@ -139,6 +143,18 @@ class IpAddressTest(unittest.TestCase):
+         self.assertEqual(value.host, '127.0.0.1')
+         self.assertEqual(value.port, 8000)
+ 
++    @unittest.skipIf(
++        sys.version_info < (3, 9, 5),
++        "Leading zeros allowed in IP addresses before Python3.9.5",
++    )
++    def test_invalid_leading_zeros(self):
++        addr = '127.000.000.001:8000'
++        option = config_options.IpAddress(default=addr)
++        self.assertRaises(
++            config_options.ValidationError,
++            option.validate, addr
++        )
++
+     def test_invalid_address_range(self):
+         option = config_options.IpAddress()
+         self.assertRaises(

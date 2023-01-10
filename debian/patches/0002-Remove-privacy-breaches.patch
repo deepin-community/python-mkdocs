@@ -1,0 +1,36 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Sat, 19 May 2018 23:50:24 +0300
+Subject: Remove privacy breaches
+
+- Disable Google Analytics in mkdocs-doc.
+- Disable scripts from third-party websites.
+---
+ mkdocs.yml                          | 1 -
+ mkdocs/themes/readthedocs/base.html | 2 --
+ 2 files changed, 3 deletions(-)
+
+diff --git a/mkdocs.yml b/mkdocs.yml
+index f120128..8479605 100644
+--- a/mkdocs.yml
++++ b/mkdocs.yml
+@@ -40,7 +40,6 @@ markdown_extensions:
+         repo: mkdocs
+ 
+ copyright: Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom Christie</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>.
+-google_analytics: ['UA-27795084-5', 'mkdocs.org']
+ 
+ plugins:
+     - search
+diff --git a/mkdocs/themes/readthedocs/base.html b/mkdocs/themes/readthedocs/base.html
+index e472228..6eb315b 100644
+--- a/mkdocs/themes/readthedocs/base.html
++++ b/mkdocs/themes/readthedocs/base.html
+@@ -18,8 +18,6 @@
+   {%- endblock %}
+ 
+   {%- block styles %}
+-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+-
+   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}" />
+   <link rel="stylesheet" href="{{ 'css/theme_extra.css'|url }}" />
+   {%- if config.theme.highlightjs %}

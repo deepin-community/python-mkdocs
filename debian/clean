@@ -1,0 +1,3 @@
+docs.debian/
+mkdocs.egg-info/
+debian/dh_mkdocs.1

@@ -1,0 +1,59 @@
+Source: python-mkdocs
+Section: text
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Brian May <bam@debian.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-python (>= 3.20180313),
+ python3-all (>= 3.2),
+ python3-click,
+ python3-jinja2 (>= 2.10.1),
+ python3-livereload (>= 2.5.1-1~),
+ python3-markdown (>= 3.2.1),
+ python3-pkg-resources,
+ python3-setuptools,
+ python3-tornado,
+ python3-yaml
+Standards-Version: 4.6.0
+Homepage: https://www.mkdocs.org/
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-mkdocs
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-mkdocs.git
+
+Package: mkdocs
+Architecture: all
+Depends:
+ fonts-font-awesome,
+ libjs-bootstrap4,
+ libjs-jquery,
+ libjs-lunr,
+ libjs-modernizr,
+ python3-pkg-resources,
+ sphinx-rtd-theme-common,
+ ${misc:Depends},
+ ${python3:Depends}
+Suggests: ghp-import, mkdocs-doc, nodejs
+Breaks: mkdocs-bootstrap (<< 0.2)
+Description: Static site generator geared towards building project documentation
+ MkDocs is a fast, simple and downright gorgeous static site generator
+ that's geared towards building project documentation. Documentation
+ source files are written in Markdown, and configured with a single YAML
+ configuration file.
+
+Package: mkdocs-doc
+Section: doc
+Architecture: all
+Depends:
+ fonts-font-awesome,
+ libjs-bootstrap4,
+ libjs-jquery,
+ libjs-lunr,
+ ${misc:Depends},
+ ${mkdocs:Depends}
+Description: Static site generator (documentation)
+ MkDocs is a fast, simple and downright gorgeous static site generator
+ that's geared towards building project documentation. Documentation
+ source files are written in Markdown, and configured with a single YAML
+ configuration file.
+ .
+ This package contains the HTML documentation.

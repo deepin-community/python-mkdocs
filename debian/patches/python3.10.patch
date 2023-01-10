@@ -1,0 +1,69 @@
+Description: Fix compatibility with Python 3.10
+Bug-Debian: https://bugs.debian.org/1002198
+Forwarded: not-needed
+Author: Graham Inggs <ginggs@debian.org>
+Last-Update: 2022-01-20
+
+--- a/mkdocs/config/config_options.py
++++ b/mkdocs/config/config_options.py
+@@ -1,5 +1,6 @@
+ import os
+-from collections import Sequence, namedtuple
++from collections import namedtuple
++from collections.abc import Sequence
+ from urllib.parse import urlparse
+ import ipaddress
+ import markdown
+--- a/mkdocs/tests/utils/ghp_import_tests.py
++++ b/mkdocs/tests/utils/ghp_import_tests.py
+@@ -13,8 +13,8 @@
+ 
+ class UtilsTests(unittest.TestCase):
+ 
+-    @mock.patch('subprocess.call', auto_spec=True)
+-    @mock.patch('subprocess.Popen', auto_spec=True)
++    @mock.patch('subprocess.call', autospec=True)
++    @mock.patch('subprocess.Popen', autospec=True)
+     def test_try_rebase(self, mock_popen, mock_call):
+ 
+         popen = mock.Mock()
+@@ -33,7 +33,7 @@
+             ['git', 'update-ref', 'refs/heads/gh-pages',
+              '4c82346e4b1b816be89dd709d35a6b169aa3df61'])
+ 
+-    @mock.patch('subprocess.Popen', auto_spec=True)
++    @mock.patch('subprocess.Popen', autospec=True)
+     def test_get_prev_commit(self, mock_popen):
+ 
+         popen = mock.Mock()
+@@ -50,7 +50,7 @@
+             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+             stderr=subprocess.PIPE)
+ 
+-    @mock.patch('subprocess.Popen', auto_spec=True)
++    @mock.patch('subprocess.Popen', autospec=True)
+     def test_get_config(self, mock_popen):
+ 
+         popen = mock.Mock()
+@@ -81,8 +81,8 @@
+     @mock.patch('mkdocs.utils.ghp_import.try_rebase', return_value=True)
+     @mock.patch('mkdocs.utils.ghp_import.get_prev_commit', return_value='sha')
+     @mock.patch('mkdocs.utils.ghp_import.get_config', return_value='config')
+-    @mock.patch('subprocess.call', auto_spec=True)
+-    @mock.patch('subprocess.Popen', auto_spec=True)
++    @mock.patch('subprocess.call', autospec=True)
++    @mock.patch('subprocess.Popen', autospec=True)
+     def test_ghp_import(self, mock_popen, mock_call, mock_get_config,
+                         mock_get_prev_commit, mock_try_rebase):
+ 
+@@ -108,8 +108,8 @@
+     @mock.patch('mkdocs.utils.ghp_import.get_prev_commit', return_value='sha')
+     @mock.patch('mkdocs.utils.ghp_import.get_config', return_value='config')
+     @mock.patch('mkdocs.utils.ghp_import.run_import')
+-    @mock.patch('subprocess.call', auto_spec=True)
+-    @mock.patch('subprocess.Popen', auto_spec=True)
++    @mock.patch('subprocess.call', autospec=True)
++    @mock.patch('subprocess.Popen', autospec=True)
+     def test_ghp_import_error(self, mock_popen, mock_call, mock_get_config,
+                               mock_run_import, mock_get_prev_commit, mock_try_rebase):
+ 

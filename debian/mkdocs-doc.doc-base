@@ -1,0 +1,9 @@
+Document: mkdocs-doc
+Title: Static site generator Documentation
+Author: Tom Christie
+Abstract: This documentation gives an introduction to mkdocs.
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/mkdocs/html/index.html
+Files: /usr/share/doc/mkdocs/html/*.html
