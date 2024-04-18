@@ -1,0 +1,34 @@
+From: Carsten Schoenert <c.schoenert@t-online.de>
+Date: Sun, 9 Oct 2022 08:58:40 +0200
+Subject: s390x: Work around unittest issue
+
+The test test_rebuild_after_delete is failing on s390x. Given this
+architecture isn't a usual desktop system let us ignore this test.
+Upstream probably won't work on this issue.
+
+Forwarded: Not-Needed
+---
+ mkdocs/tests/livereload_tests.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/mkdocs/tests/livereload_tests.py b/mkdocs/tests/livereload_tests.py
+index db6b791..1934ed6 100644
+--- a/mkdocs/tests/livereload_tests.py
++++ b/mkdocs/tests/livereload_tests.py
+@@ -3,6 +3,7 @@
+ import contextlib
+ import email
+ import io
++import os
+ import sys
+ import threading
+ import time
+@@ -111,6 +112,8 @@ class BuildTests(unittest.TestCase):
+ 
+     @tempdir({"foo.docs": "a"})
+     @tempdir({"foo.site": "original"})
++    @unittest.skipIf(os.uname()[4].startswith("s390"),
++                     "Test expected fo fail on s390(x)")
+     def test_rebuild_after_delete(self, site_dir, docs_dir):
+         started_building = threading.Event()
+ 

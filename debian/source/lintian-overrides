@@ -1,0 +1,2 @@
+# There is no upstream signature we could use.
+python-mkdocs source: debian-watch-does-not-check-openpgp-signature [debian/watch]

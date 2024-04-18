@@ -6,33 +6,23 @@ Files-Excluded: mkdocs/contrib/search/lunr-language
                 mkdocs/themes/mkdocs/css/font-awesome.min.css
                 mkdocs/themes/mkdocs/fonts
                 mkdocs/themes/mkdocs/js/bootstrap.min.js
-                mkdocs/themes/mkdocs/js/jquery-1.10.2.min.js
+                mkdocs/themes/mkdocs/js/jquery-*.min.js
                 mkdocs/themes/readthedocs/css/theme.css
                 mkdocs/themes/readthedocs/fonts
                 mkdocs/themes/readthedocs/js
 
 Files: *
-Copyright: 2014 Tom Christie
+Copyright: 2014 - 2023 Tom Christie
 License: BSD-2-Clause
 
 Files: debian/*
 Copyright: 2015 Brian May <bam@debian.org>
+ 2022-2023 Carsten Schoenert <c.schoenert@t-online.de>
 License: BSD-2-Clause
 
 Files: mkdocs/contrib/search/templates/search/lunr.js
 Copyright: 2018 Oliver Nightingale
 License: Expat
-
-Files: mkdocs/utils/ghp_import.py
-Copyright: 2013 Paul Davis <paul.joseph.davis@gmail.com>
-License: Tumbolia
- Copying and distribution of this file, with or without modification, are
- permitted in any medium without royalty provided the copyright notice and this
- notice are preserved.
- .
- TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
- .
- 0. opan saurce LOL
 
 Files: mkdocs/utils/meta.py
 Copyright: 2015 Waylan Limberg

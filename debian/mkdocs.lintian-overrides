@@ -1,3 +1,19 @@
 # dh_mkdocs replaces these URLs with local ones in packaged documentation
-mkdocs: privacy-breach-generic usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/base.html [*highlight.js*] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js*)
-mkdocs: privacy-breach-generic usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/base.html [*highlight.js*] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js*)
+mkdocs: privacy-breach-generic [<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/styles/{{ config.theme.hljs_style }}.min.css">] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/styles/{{ config.theme.hljs_style }}.min.css) [usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/base.html]
+#mkdocs: privacy-breach-generic [<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/styles/github.min.css" />] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/styles/github.min.css) [usr/lib/python3/dist-packages/mkdocs/themes/*/base.html]
+mkdocs: privacy-breach-generic [<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/styles/{{ config.theme.hljs_style }}.min.css" />] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/styles/{{ config.theme.hljs_style }}.min.css) [usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/base.html]
+mkdocs: privacy-breach-generic [<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/highlight.min.js">] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/highlight.min.js) [usr/lib/python3/dist-packages/mkdocs/themes/*/base.html]
+mkdocs: privacy-breach-generic [<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/languages/{{lang}}.min.js">] (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/*/languages/{{lang}}.min.js) [usr/lib/python3/dist-packages/mkdocs/themes/*/base.html]
+
+# These two files are templates, it's up to the user if he will use the setting
+# 'config.theme.analytics.gtag'.
+mkdocs: privacy-breach-generic [<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.theme.analytics.gtag }}">] (https://www.googletagmanager.com/gtag/js?id={{ config.theme.analytics.gtag }}) [usr/lib/python3/dist-packages/mkdocs/themes/*/base.html]
+
+# This isn't documentation, these are all required HTML data for the themes.
+mkdocs: package-contains-documentation-outside-usr-share-doc [usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/*.html]
+mkdocs: package-contains-documentation-outside-usr-share-doc [usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/*.html]
+
+# We don't care about these files or paths, as required/wanted by upstream.
+mkdocs: image-file-in-usr-lib [usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/img/grid.png]
+mkdocs: repeated-path-segment mkdocs [usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/]
+mkdocs: repeated-path-segment search [usr/lib/python3/dist-packages/mkdocs/contrib/search/templates/search/]

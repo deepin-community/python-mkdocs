@@ -1,8 +1,188 @@
-python-mkdocs (1.1.2+dfsg-deepin1) unstable; urgency=medium
+python-mkdocs (1.5.3+dfsg-1) unstable; urgency=medium
 
-  * Fix compatibility with Python 3.10.
+  * Team Upload.
+  * [efaace8] New upstream version 1.5.3+dfsg
 
- -- Changwei Miao <miaochangwei@uniontech.com>  Mon, 26 Sep 2022 14:41:49 +0800
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 01 Oct 2023 19:50:09 +0200
+
+python-mkdocs (1.5.2+dfsg-1) unstable; urgency=medium
+
+  * Team Upload.
+  [ Bas Couwenberg ]
+  * [a8cf95a] Provide dh-sequence-mkdocs.
+    (Closes: #1024658)
+
+  [ Carsten Schoenert ]
+  * [d300f73] d/watch: Add compression typ gz
+  * [e1a9122] d/gbp.conf: Catch all versions of minimized JQuery files
+  * [bbf7ba7] New upstream version 1.5.2+dfsg
+  * [2961680] Rebuild patch queue from patch-queue branch
+    Adjusted patches:
+    debian-hacks/Disable-the-Markdown-GitHub-links-extension.patch
+    debian-hacks/Disable-use_directory_urls-configuration-option.patch
+    debian-hacks/docs-Disable-Google-Analytics-in-mkdocs-doc.patch
+  * [f1c643e] d/rules: Add target override_dh_clean
+    (Closes: #1046685)
+  * [09b8645] d/control: Add BuildProfileSpec to Build-Depends
+  * [dbfc01b] d/rules: Catch nodoc DEB_BUILD_OPTIONS to disable docu build
+  * [c36fb0d] d/control: Bump Standards-Version to 4.6.2
+    No further changes needed.
+  * [38ea797] d/copyright: Update content and year data
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Tue, 05 Sep 2023 19:52:06 +0530
+
+python-mkdocs (1.4.2+dfsg-2) unstable; urgency=medium
+
+  * Team Upload.
+  * [3211714] Rebuild patch queue from patch-queue branch
+    Dropped patches (packages are now within the archive):
+    debian-hacks/mkdocs.yml-Don-t-use-callout-markdown-extension.patch
+    debian-hacks/mkdocs.yml-Don-t-use-literate-nav-plugin.patch
+  * [cebfb2c] d/control: Add new build dependencies to build mkdocs-doc
+    Adding mkdocs-literate-nav and python3-markdown-callouts to B-D.
+  * [ed2a332] d/rules: Remove Python version in PYBUILD_DESTDIR
+  * [5a2bb78] autopkgtest: Make upstream-tests more resilent
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Tue, 29 Nov 2022 09:52:02 +0100
+
+python-mkdocs (1.4.2+dfsg-1) unstable; urgency=medium
+
+  * Team Upload.
+  * [e4d93b1] New upstream version 1.4.2+dfsg
+  * [b0819bf] Rebuild patch queue from patch-queue branch
+    Just a refreshing of existing patches.
+  * [bba881f] d/copyright: Update upstream year data
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 05 Nov 2022 10:03:14 +0100
+
+python-mkdocs (1.4.1+dfsg-1) unstable; urgency=medium
+
+  * Team Upload.
+  * [4fb8f7d] New upstream version 1.4.1+dfsg
+  * [84a3885] Rebuild patch queue from patch-queue branch
+    Removed patch:
+    debian-hacks/Add-.md-files-to-the-MANIFEST.patch
+  * [cd7a450] d/{control,rules}: Move over to dh-sequence-python3
+  * [f00cab4] d/control: Adding new required Build-Dependencies
+    Upstream switched to hatchling build together with a pyproject.toml file.
+  * [9fb9074] d/rules: Adjust test environment after build
+    Due to modifications within the folder structure we need to prepare and
+    copy some testing data into the build folder before running the tests.
+  * [43895a2] d/copyright: Adding myself to the copyright data
+  * [992c76e] d/rules: Use verbose mode while mkdocs is running
+  * [4d6f995] d/watch: Add repacksuffix to opts variable
+  * [0079d44] d/mkdocs.lintian-overrides: Add more stuff to ignore
+  * [52f2f5b] d/s/lintian-overrides: Ignore some files and folders
+  * [64e2689] Salsa CI: Disable unneeded runners
+  * [f42d4ec] Salsa CI: Rename Yaml file to salsa-ci.yml
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 23 Oct 2022 08:03:05 +0200
+
+python-mkdocs (1.4.0+dfsg-3) unstable; urgency=medium
+
+  * Team Upload.
+  * [b3b226c] Rebuild patch queue from patch-queue branch
+    Added patch:
+    debian-hacks/s390x-Work-around-unittest-issue.patch
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 09 Oct 2022 09:12:32 +0200
+
+python-mkdocs (1.4.0+dfsg-2) unstable; urgency=medium
+
+  * [a4060d7] autopkgtest: Ensure B-D installed for unittests
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 08 Oct 2022 09:33:10 +0200
+
+python-mkdocs (1.4.0+dfsg-1) unstable; urgency=medium
+
+  * Team Upload.
+  * New upstream version 1.4.0+dfsg
+    (Closes: 1009702)
+  * Rebuild patch-queue from patch queue branch
+    Adjusted/rebuild patches:
+    debian-hacks/Disable-non-English-search-support.patch
+    debian-hacks/Disable-the-Markdown-GitHub-links-extension.patch
+    debian-hacks/Disable-use_directory_urls-configuration-option.patch
+    Added patches:
+    debian-hacks/mkdocs.yml-Don-t-use-callout-markdown-extension.patch
+    debian-hacks/mkdocs.yml-Don-t-use-literate-nav-plugin.patch
+    Upstream has added the Markdown extension 'callout' and the plugin
+    'literate-nav' to the mkdocs.yml file, both parts aren't yet packaged in
+    Debian.
+  * d/control: Adding new required Build-Dependencies
+    MkDocs uses now the plugins autorefs and mkdocstrings together with the
+    mkdocstrings-python-handlers Add-on and also the Markdown extension
+    pymdownx which are added to the B-D in order to get the MkDocs
+    documentation build.
+  * d/mkdocs.lintian-overrides: Update syntax
+  * d/mkdocs-doc.lintian-overrides: Update syntax
+  * autopkgtest: Add upstream tests to the test queue
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Fri, 07 Oct 2022 18:23:43 +0200
+
+python-mkdocs (1.3.0+dfsg-2) unstable; urgency=medium
+
+  * Team Upload.
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster:
+    + mkdocs: Drop versioned constraint on python3-livereload in Depends.
+    + mkdocs: Drop versioned constraint on mkdocs-bootstrap in Breaks.
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Nilesh Patra ]
+  * Add python3-babel to B-D (Closes: #1020003)
+  * Add babel to suggests since it is being used for i18n
+
+ -- Nilesh Patra <nilesh@debian.org>  Sat, 01 Oct 2022 14:49:56 +0530
+
+python-mkdocs (1.3.0+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 1.3.0+dfsg
+  * d/gbp.conf: Ignore patch numbers while pq export
+  * Rebuild patch-queue from patch queue branch
+    Added patch:
+    debian-hacks/docs-Disable-Google-Analytics-in-mkdocs-doc.patch
+    Removed patches:
+    0002-Remove-privacy-breaches.patch
+    0008-Disable-Lunr.py-support.patch
+    0011-tests-Fixup-inclusion-for-localization-module.patch
+  * d/watch: Correct Debian version mangling
+  * d/control: Add new required package dependency
+    python3-lunr is now available in the archive so it's usable as an
+    dependency.
+  * d/control: (Re-)add package python3-livereload
+    This dependency was added through a patch in the patch queue which isn't
+    used any more, to fulfill the need for this package add it to the
+    package dependencies.
+  * d/mkdocs.lintian-overrides: Ignore two template files
+    These two files are not a potential privacy breach as they are just
+    templates which the user needs to configure later.
+  * d/mkdocs-doc.lintian-overrides: Ignore files in docu
+    The documentation is build without usage of Google Analytics.
+  * d/mkdocs.links: Add more linking to FontAwesome
+  * d/python-mkdocs.NEWS: Create a new NEWS file
+  * d/README.source: Adding default data about source
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Tue, 29 Mar 2022 08:59:53 +0200
+
+python-mkdocs (1.2.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * d/gbp.conf: Add some more defaults
+  * New upstream version 1.2.3
+    (Closes: #1002198)
+  * Rebuild patch-queue from patch queue branch
+    Added patch:
+    0011-tests-Fixup-inclusion-for-localization-module.patch
+  * d/watch: Update to version 4
+  * d/copyright: Update content
+  * d/control: Update build dependencies
+  * d/control: Restructure and split off build-deps
+  * d/control: Adding entry Rules-Requires-Root: no
+  * d/mkdocs.lintian-overrides: Exclude HTML file within themes
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Mon, 28 Feb 2022 17:35:14 +0100
 
 python-mkdocs (1.1.2+dfsg-2) unstable; urgency=medium
 

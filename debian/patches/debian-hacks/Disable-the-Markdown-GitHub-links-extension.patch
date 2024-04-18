@@ -1,0 +1,25 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Fri, 10 Aug 2018 16:53:32 +0300
+Subject: Disable the Markdown GitHub links extension
+
+Until it is packaged in Debian.
+
+Forwarded: Not-Needed
+---
+ mkdocs.yml | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/mkdocs.yml b/mkdocs.yml
+index 2c7b751..b1e89b1 100644
+--- a/mkdocs.yml
++++ b/mkdocs.yml
+@@ -39,9 +39,6 @@ markdown_extensions:
+   - pymdownx.snippets
+   - pymdownx.superfences
+   - callouts
+-  - mdx_gh_links:
+-      user: mkdocs
+-      repo: mkdocs
+   - mkdocs-click
+ 
+ copyright: Copyright &copy; 2014 <a href="https://twitter.com/starletdreaming">Tom Christie</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>.

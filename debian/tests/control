@@ -1,2 +1,11 @@
 Tests: check-links
-Depends: mkdocs, mkdocs-doc
+Depends:
+ mkdocs,
+ mkdocs-doc
+
+Tests: upstream-tests
+Depends:
+ python3-all,
+ @,
+ @builddeps@,
+Restrictions: allow-stderr

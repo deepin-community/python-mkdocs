@@ -1,0 +1,23 @@
+From: Brian May <bam@debian.org>
+Date: Mon, 2 May 2016 15:53:46 +1000
+Subject: Use themes from /usr/share/mkdocs/themes
+
+See https://lists.debian.org/debian-python/2016/04/msg00042.html
+---
+ mkdocs/__init__.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/mkdocs/__init__.py b/mkdocs/__init__.py
+index c6257ad..f69c47f 100644
+--- a/mkdocs/__init__.py
++++ b/mkdocs/__init__.py
+@@ -1,5 +1,9 @@
+ #!/usr/bin/env python
+ 
+ 
++import sys
++
++sys.path.insert(1, "/usr/share/mkdocs/themes")
++
+ # For acceptable version formats, see https://www.python.org/dev/peps/pep-0440/
+ __version__ = '1.5.3'
