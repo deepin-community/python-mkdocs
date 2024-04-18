@@ -1,0 +1,3 @@
+# All the HTML files within mkdocs-doc have set the gtag value to 'None'.
+# Due this no Google Analytics will be used.
+mkdocs-doc: privacy-breach-generic [<script async src="https://www.googletagmanager.com/gtag/js?id=none">] (https://www.googletagmanager.com/gtag/js?id=none) [usr/share/doc/mkdocs/html/*.html]

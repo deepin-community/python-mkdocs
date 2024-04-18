@@ -1,0 +1,26 @@
+From: Carsten Schoenert <c.schoenert@t-online.de>
+Date: Mon, 28 Mar 2022 21:00:07 +0200
+Subject: docs: Disable Google Analytics in mkdocs-doc
+
+We don't want nor need the usage of Google Analytics within the Debian
+packages, so set the value config.theme.analytics.gtag' finally to
+'None' which disables the usage the JS code inside { if } { endif }.
+
+Forwarded: Not-Needed
+---
+ mkdocs.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mkdocs.yml b/mkdocs.yml
+index b1e89b1..8186d51 100644
+--- a/mkdocs.yml
++++ b/mkdocs.yml
+@@ -9,7 +9,7 @@ edit_uri: blob/master/docs/
+ theme:
+   name: mkdocs
+   locale: en
+-  analytics: {gtag: 'G-274394082'}
++  analytics: {gtag: 'None'}
+   highlightjs: true
+   hljs_languages:
+     - yaml

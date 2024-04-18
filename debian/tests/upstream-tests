@@ -1,0 +1,26 @@
+#! /bin/sh
+
+set -e
+
+cp -r docs mkdocs ${AUTOPKGTEST_TMP}
+
+# Note: Some tests within cli_tests.py are expected to fail,
+# we remove the whole file before calling unittest.
+
+for py3vers in $(py3versions -s); do
+    echo
+    echo "***************************"
+    echo "*** Testing with ${py3vers}"
+    echo "***************************"
+    echo
+    cd ${AUTOPKGTEST_TMP} && \
+        echo "Content of current working folder:\n" && \
+        ls -la && \
+        echo "Running tests...\n" && \
+        rm -f mkdocs/tests/cli_tests.py && \
+        ${py3vers} -m unittest discover -v -s mkdocs/tests -p "*_tests.py" && \
+        rm -rf .pytest_cache || exit 1
+done
+echo
+
+exit 0
