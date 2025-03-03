@@ -10,12 +10,12 @@ Forwarded: https://github.com/mkdocs/mkdocs/commit/775d506c63d4b57553110ee56b8c1
  1 file changed, 12 insertions(+)
 
 diff --git a/mkdocs/tests/config/config_options_tests.py b/mkdocs/tests/config/config_options_tests.py
-index 7fd2149..97f6e64 100644
+index 0f5f07d..b843c5c 100644
 --- a/mkdocs/tests/config/config_options_tests.py
 +++ b/mkdocs/tests/config/config_options_tests.py
-@@ -339,6 +339,18 @@ class IpAddressTest(TestCase):
-         self.assertEqual(conf.option.host, '127.0.0.1')
-         self.assertEqual(conf.option.port, 8000)
+@@ -361,6 +361,18 @@ class IpAddressTest(TestCase):
+         self.assertEqual(conf['option'].host, '::')
+         self.assertEqual(conf['option'].port, 8000)
  
 +    @unittest.skipIf(
 +        sys.version_info >= (3, 9, 5),

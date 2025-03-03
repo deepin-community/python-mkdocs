@@ -1,35 +1,34 @@
-usr/share/fonts-font-awesome/css/font-awesome.min.css                   usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/css/font-awesome.min.css
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.eot              usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/fonts/fontawesome-webfont.eot
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.eot              usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.eot
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.eot              usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/fontawesome-webfont.eot
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.svg              usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/fonts/fontawesome-webfont.svg
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.svg              usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.svg              usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/fontawesome-webfont.svg
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff             usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/fonts/fontawesome-webfont.woff
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff             usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.woff
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff             usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/fontawesome-webfont.woff
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff2            usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/fonts/fontawesome-webfont.woff2
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff2            usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.woff2
-usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff2            usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/fontawesome-webfont.woff2
-usr/share/fonts/opentype/font-awesome/FontAwesome.otf                   usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/fonts/FontAwesome.otf
-usr/share/fonts/truetype/font-awesome/fontawesome-webfont.ttf           usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/fonts/fontawesome-webfont.ttf
-usr/share/fonts/truetype/font-awesome/fontawesome-webfont.ttf           usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.ttf
-usr/share/fonts/truetype/font-awesome/fontawesome-webfont.ttf           usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/fontawesome-webfont.ttf
-usr/share/javascript/jquery/jquery.min.js                               usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/js/jquery-1.10.2.min.js
-usr/share/javascript/jquery/jquery.min.js                               usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/js/jquery-2.1.1.min.js
-usr/share/javascript/lunr/lunr.js                                       usr/lib/python3/dist-packages/mkdocs/contrib/search/templates/search/lunr.js
-usr/share/javascript/modernizr/modernizr.min.js                         usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/js/modernizr-2.8.3.min.js
-usr/share/nodejs/bootstrap/dist/css/bootstrap.min.css                   usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/css/bootstrap.min.css
-usr/share/nodejs/bootstrap/dist/js/bootstrap.min.js                     usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/js/bootstrap.min.js
-usr/share/sphinx_rtd_theme/static/css/theme.css                         usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/theme.css
-usr/share/sphinx_rtd_theme/static/fonts/Lato-Bold.ttf                   usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-Bold.ttf
-usr/share/sphinx_rtd_theme/static/fonts/Lato-Bold.woff2                 usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-Bold.woff2
-usr/share/sphinx_rtd_theme/static/fonts/Lato-BoldItalic.ttf             usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-BoldItalic.ttf
-usr/share/sphinx_rtd_theme/static/fonts/Lato-BoldItalic.woff2           usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-BoldItalic.woff2
-usr/share/sphinx_rtd_theme/static/fonts/Lato-Italic.ttf                 usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-Italic.ttf
-usr/share/sphinx_rtd_theme/static/fonts/Lato-Italic.woff2               usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-Italic.woff2
-usr/share/sphinx_rtd_theme/static/fonts/Lato-Regular.ttf                usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-Regular.ttf
-usr/share/sphinx_rtd_theme/static/fonts/Lato-Regular.woff2              usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/Lato-Regular.woff2
-usr/share/sphinx_rtd_theme/static/fonts/RobotoSlab-Bold.woff2           usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/RobotoSlab-Bold.woff2
-usr/share/sphinx_rtd_theme/static/fonts/RobotoSlab-Regular.woff2        usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/fonts/RobotoSlab-Regular.woff2
-usr/share/sphinx_rtd_theme/static/js/theme.js                           usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/js/theme.js
+# Source                                                                 Linkage
+
+# fonts-font-awesome
+# currently no linking of font-awesome.min.css, we use the shipped one
+#usr/share/fonts-font-awesome/css/font-awesome.min.css                    usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/css/font-awesome.min.css
+usr/share/fonts-font-awesome/fonts/fontawesome-webfont.eot               usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.eot
+usr/share/fonts-font-awesome/fonts/fontawesome-webfont.svg               usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.svg
+usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff              usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.woff
+usr/share/fonts-font-awesome/fonts/fontawesome-webfont.woff2             usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.woff2
+usr/share/fonts/truetype/font-awesome/fontawesome-webfont.ttf            usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/fonts/fontawesome-webfont.ttf
+
+
+# libjs-bootstrap5
+/usr/share/javascript/bootstrap5/css/bootstrap.min.css                   usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/css/bootstrap.min.css
+/usr/share/javascript/bootstrap5/css/bootstrap.min.css.map               usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/css/bootstrap.min.css.map
+/usr/share/javascript/bootstrap5/js/bootstrap.bundle.min.js              usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/js/bootstrap.bundle.min.js
+/usr/share/javascript/bootstrap5/js/bootstrap.bundle.min.js.map          usr/lib/python3/dist-packages/mkdocs/themes/mkdocs/js/bootstrap.bundle.min.js.map
+
+
+# libjs-jquery
+usr/share/javascript/jquery/jquery.min.js                                usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/js/jquery-3.6.0.min.js
+
+
+# libjs-lunr
+usr/share/javascript/lunr/lunr.js                                        usr/lib/python3/dist-packages/mkdocs/contrib/search/templates/search/lunr.js
+
+
+# node-html5shiv
+/usr/share/nodejs/html5shiv/dist/html5shiv.min.js                        usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/js//html5shiv.min.js
+
+
+# sphinx-rtd-theme-common
+usr/share/sphinx_rtd_theme/static/css/theme.css                          usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/css/theme.css
+usr/share/sphinx_rtd_theme/static/js/theme.js                            usr/lib/python3/dist-packages/mkdocs/themes/readthedocs/js/theme.js

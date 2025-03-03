@@ -192,8 +192,7 @@ sub symlink_static_files {
     foreach my $package_name (@packages) {
         my $stdout;
         my $pid = open2($stdout, undef, 'dpkg-query', '--listfiles', $package_name);
-        waitpid($pid, 0);
-        if ($? eq 0) {
+        if ($pid) {
             while (<$stdout>) {
                 chomp;
                 if (-f && -s && ! -l) {
@@ -202,6 +201,8 @@ sub symlink_static_files {
                     $package_names_by_hash{$digest} = $package_name;
                 }
             }
+            close $stdout;
+            waitpid($pid, 0);
         }
     }
 

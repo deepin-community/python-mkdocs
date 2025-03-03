@@ -1,9 +1,9 @@
 debian-hacks/Use-themes-from-usr-share-mkdocs-themes.patch
 debian-hacks/Disable-use_directory_urls-configuration-option.patch
 debian-hacks/Disable-the-Markdown-GitHub-links-extension.patch
-debian-hacks/Do-not-assert-that-fonts-directory-exists.patch
-debian-hacks/Disable-non-English-search-support.patch
+debian-hacks/Do-not-assert-that-webfonts-directory-exists.patch
 debian-hacks/Make-toc.html-look-better-with-default-Bootstrap-theme.patch
 upstream/Update-IpAddress-tests-for-Python3.9.5.patch
 debian-hacks/docs-Disable-Google-Analytics-in-mkdocs-doc.patch
 debian-hacks/s390x-Work-around-unittest-issue.patch
+debian-hacks/docs-Adjust-embedded-HTML-for-local-browsing.patch

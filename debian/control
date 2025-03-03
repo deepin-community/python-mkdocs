@@ -2,7 +2,9 @@ Source: python-mkdocs
 Section: text
 Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
-Uploaders: Brian May <bam@debian.org>
+Uploaders:
+ Brian May <bam@debian.org>,
+ Carsten Schoenert <c.schoenert@t-online.de>,
 Build-Depends:
  debhelper-compat (= 13),
  dh-sequence-python3,
@@ -26,11 +28,12 @@ Build-Depends-Indep:
  python3-platformdirs <!nocheck>,
  python3-pymdownx <!nocheck>,
  python3-pyyaml-env-tag <!nocheck>,
+ python3-setuptools,
  python3-watchdog <!nocheck>,
  python3-yaml <!nocheck>,
 Rules-Requires-Root: no
-Standards-Version: 4.6.2
-Homepage: https://www.mkdocs.org/
+Standards-Version: 4.7.2
+Homepage: https://github.com/mkdocs/mkdocs
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-mkdocs
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-mkdocs.git
 
@@ -38,13 +41,11 @@ Package: mkdocs
 Architecture: all
 Depends:
  fonts-font-awesome,
- libjs-bootstrap4,
+ libjs-bootstrap5,
  libjs-jquery,
  libjs-lunr,
- libjs-modernizr,
  python3-livereload,
  python3-lunr,
- python3-pkg-resources,
  sphinx-rtd-theme-common,
  ${misc:Depends},
  ${python3:Depends}
@@ -60,8 +61,7 @@ Package: mkdocs-doc
 Section: doc
 Architecture: all
 Depends:
- fonts-font-awesome,
- libjs-bootstrap4,
+ libjs-bootstrap5,
  libjs-jquery,
  libjs-lunr,
  ${misc:Depends},

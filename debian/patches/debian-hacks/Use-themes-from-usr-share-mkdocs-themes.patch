@@ -8,7 +8,7 @@ See https://lists.debian.org/debian-python/2016/04/msg00042.html
  1 file changed, 4 insertions(+)
 
 diff --git a/mkdocs/__init__.py b/mkdocs/__init__.py
-index c6257ad..f69c47f 100644
+index 7652a39..037963d 100644
 --- a/mkdocs/__init__.py
 +++ b/mkdocs/__init__.py
 @@ -1,5 +1,9 @@
@@ -20,4 +20,4 @@ index c6257ad..f69c47f 100644
 +sys.path.insert(1, "/usr/share/mkdocs/themes")
 +
  # For acceptable version formats, see https://www.python.org/dev/peps/pep-0440/
- __version__ = '1.5.3'
+ __version__ = '1.6.1'

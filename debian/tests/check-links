@@ -27,49 +27,22 @@ fi
 echo "Checking mkdocs links:"
 BASE_DIR="/usr/lib/python3/dist-packages/mkdocs"
 
-check_file "$BASE_DIR/themes/mkdocs/css/font-awesome.min.css" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/fonts/fontawesome-webfont.eot" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/fontawesome-webfont.eot" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/fonts/FontAwesome.otf" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/fonts/fontawesome-webfont.svg" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/fontawesome-webfont.svg" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/fonts/fontawesome-webfont.ttf" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/fontawesome-webfont.ttf" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/fonts/fontawesome-webfont.woff" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/fontawesome-webfont.woff" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/fonts/fontawesome-webfont.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/fontawesome-webfont.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/js/bootstrap.min.js" || RESULT=3
+check_file "$BASE_DIR/themes/mkdocs/js/bootstrap.bundle.min.js" || RESULT=3
+check_file "$BASE_DIR/themes/mkdocs/js/bootstrap.bundle.min.js.map" || RESULT=3
 check_file "$BASE_DIR/themes/mkdocs/css/bootstrap.min.css" || RESULT=3
-check_file "$BASE_DIR/themes/mkdocs/js/jquery-1.10.2.min.js" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/js/jquery-2.1.1.min.js" || RESULT=3
+check_file "$BASE_DIR/themes/mkdocs/css/bootstrap.min.css.map" || RESULT=3
+check_file "$BASE_DIR/themes/readthedocs/js/jquery-3.6.0.min.js" || RESULT=3
 check_file "$BASE_DIR/contrib/search/templates/search/lunr.js" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/js/modernizr-2.8.3.min.js" || RESULT=3
 check_file "$BASE_DIR/themes/readthedocs/css/theme.css" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-Bold.ttf" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-Bold.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-BoldItalic.ttf" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-BoldItalic.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-Italic.ttf" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-Italic.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-Regular.ttf" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/Lato-Regular.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/RobotoSlab-Bold.woff2" || RESULT=3
-check_file "$BASE_DIR/themes/readthedocs/fonts/RobotoSlab-Regular.woff2" || RESULT=3
 check_file "$BASE_DIR/themes/readthedocs/js/theme.js" || RESULT=3
 
 echo "Checking mkdocs-doc links:"
 BASE_DIR="/usr/share/doc/mkdocs/html"
-check_file "$BASE_DIR/css/font-awesome.min.css" || RESULT=4
-check_file "$BASE_DIR/fonts/fontawesome-webfont.eot" || RESULT=4
-check_file "$BASE_DIR/fonts/FontAwesome.otf" || RESULT=4
-check_file "$BASE_DIR/fonts/fontawesome-webfont.svg" || RESULT=4
-check_file "$BASE_DIR/fonts/fontawesome-webfont.ttf" || RESULT=4
-check_file "$BASE_DIR/fonts/fontawesome-webfont.woff" || RESULT=4
-check_file "$BASE_DIR/fonts/fontawesome-webfont.woff2" || RESULT=4
-check_file "$BASE_DIR/js/bootstrap.min.js" || RESULT=4
+check_file "$BASE_DIR/js/bootstrap.bundle.min.js" || RESULT=4
+check_file "$BASE_DIR/js/bootstrap.bundle.min.js.map" || RESULT=4
 check_file "$BASE_DIR/css/bootstrap.min.css" || RESULT=4
-check_file "$BASE_DIR/js/jquery-1.10.2.min.js" || RESULT=4
+check_file "$BASE_DIR/css/bootstrap.min.css.map" || RESULT=4
+check_file "$BASE_DIR/js/jquery-3.6.0.min.js" || RESULT=4
 check_file "$BASE_DIR/search/lunr.js" || RESULT=4
 
 exit "$RESULT"

@@ -12,21 +12,19 @@ export LC_ALL=C.UTF-8
 %:
 	dh $@ --buildsystem=pybuild
 
-override_dh_clean:
-	dh_clean
+execute_after_dh_clean:
+	rm -rf .mypy_cache
 	for mo_file in `find mkdocs/themes/ -type f -name "*.mo"`; do \
 	    rm -f $${mo_file} ;\
 	done
 
-override_dh_auto_build:
-	dh_auto_build
+execute_after_dh_auto_build:
 ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
 	PYTHONPATH=. python3 -m mkdocs build -v -d docs.debian/html
 	rm -rf docs.debian/html/__pycache__
 endif
 
-override_dh_auto_install:
-	dh_auto_install
+execute_after_dh_auto_install:
 	rm debian/mkdocs/usr/bin/mkdocs
 	find debian -name LICENSE -exec rm -f {} \;;
 	find debian -type d -empty -delete
@@ -36,8 +34,7 @@ override_dh_installman:
 	dh_installman
 
 ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
-override_dh_installdocs:
-	dh_installdocs
+execute_after_dh_installdocs:
 	./debian/scripts/dh_mkdocs
 endif
 

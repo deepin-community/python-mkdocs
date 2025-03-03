@@ -10,10 +10,10 @@ Forwarded: Not-Needed
  1 file changed, 3 deletions(-)
 
 diff --git a/mkdocs.yml b/mkdocs.yml
-index 2c7b751..b1e89b1 100644
+index 5641e68..7f299e6 100644
 --- a/mkdocs.yml
 +++ b/mkdocs.yml
-@@ -39,9 +39,6 @@ markdown_extensions:
+@@ -44,9 +44,6 @@ markdown_extensions:
    - pymdownx.snippets
    - pymdownx.superfences
    - callouts

@@ -1,0 +1,73 @@
+From: Colin Watson <cjwatson@debian.org>
+Date: Thu, 26 Dec 2024 14:18:23 +0000
+Subject: docs: Adjust embedded HTML for local browsing
+
+See
+https://www.mkdocs.org/user-guide/writing-your-docs/#linking-from-raw-html.
+
+Forwarded: not-needed
+---
+ docs/index.md | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/docs/index.md b/docs/index.md
+index f796a05..cf42b95 100644
+--- a/docs/index.md
++++ b/docs/index.md
+@@ -14,8 +14,8 @@ configuration file. Start by reading the [introductory tutorial], then check the
+ [User Guide]: user-guide/README.md
+ 
+ <div class="text-center">
+-<a href="getting-started/" class="btn btn-primary" role="button">Getting Started</a>
+-<a href="user-guide/" class="btn btn-primary" role="button">User Guide</a>
++<a href="getting-started.html" class="btn btn-primary" role="button">Getting Started</a>
++<a href="user-guide/index.html" class="btn btn-primary" role="button">User Guide</a>
+ </div>
+ 
+ <div class="pt-2 pb-4 px-4 my-4 bg-body-tertiary rounded-3">
+@@ -27,14 +27,14 @@ configuration file. Start by reading the [introductory tutorial], then check the
+       <div class="card-body">
+         <h3 class="card-title">Great themes available</h3>
+         <p class="card-text">
+-            There's a stack of good looking <a href="user-guide/choosing-your-theme">themes</a> available for MkDocs.
++            There's a stack of good looking <a href="user-guide/choosing-your-theme.html">themes</a> available for MkDocs.
+             Choose between the built in themes:
+-            <a href="user-guide/choosing-your-theme/#mkdocs">mkdocs</a> and
+-            <a href="user-guide/choosing-your-theme/#readthedocs">readthedocs</a>,
++            <a href="user-guide/choosing-your-theme.html#mkdocs">mkdocs</a> and
++            <a href="user-guide/choosing-your-theme.html#readthedocs">readthedocs</a>,
+             select one of the third-party themes
+             (on the <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">MkDocs Themes</a> wiki page
+             as well as the <a href="https://github.com/mkdocs/catalog#-theming">MkDocs Catalog</a>),
+-            or <a href="dev-guide/themes/">build your own</a>.
++            or <a href="dev-guide/themes.html">build your own</a>.
+         </p>
+       </div>
+     </div>
+@@ -45,13 +45,13 @@ configuration file. Start by reading the [introductory tutorial], then check the
+         <h3 class="card-title">Easy to customize</h3>
+         <p class="card-text">
+             Get your project documentation looking just the way you want it by
+-            <a href="user-guide/customizing-your-theme/">customizing your
++            <a href="user-guide/customizing-your-theme.html">customizing your
+             theme</a> and/or installing some <a
+-            href="user-guide/configuration/#plugins">plugins</a>. Modify
++            href="user-guide/configuration.html#plugins">plugins</a>. Modify
+             Markdown's behavior with <a
+-            href="user-guide/configuration/#markdown_extensions">Markdown
++            href="user-guide/configuration.html#markdown_extensions">Markdown
+             extensions</a>. Many <a
+-            href="user-guide/configuration/">configuration options</a> are
++            href="user-guide/configuration.html">configuration options</a> are
+             available.
+         </p>
+       </div>
+@@ -79,7 +79,7 @@ configuration file. Start by reading the [introductory tutorial], then check the
+         <p class="card-text">
+             MkDocs builds completely static HTML sites that you can host on
+             GitHub Pages, Amazon S3, or <a
+-            href="user-guide/deploying-your-docs/">anywhere</a> else you
++            href="user-guide/deploying-your-docs.html">anywhere</a> else you
+             choose.
+         </p>
+       </div>

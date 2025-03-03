@@ -1,9 +1,98 @@
+python-mkdocs (1.6.1+dfsg1-1) unstable; urgency=medium
+
+  [ Karsten Schöke ]
+  * [f137a0d] d/copyright: Be more precise on lunr.*.js files
+  * [6c108ae] d/README.source: Note for resumption of lunr languages
+
+  [ Carsten Schoenert ]
+  * [2c7fe8d] d/copyright: Remove commented lines in Files-Excluded
+  * [079b816] d/gbp.conf: Remove commented line here too
+  * [c55ea5d] New upstream version 1.6.1+dfsg1
+  * [039efcb] Rebuild patch queue from patch-queue branch
+    Removed patch:
+    debian-hacks/Disable-non-English-search-support.patch
+  * [da7e23f] d/control: Bump Standards-Version to 4.7.2
+    No further changes needed.
+  * [b66c21b] d/s/lintian-overrides: Ignore */lunr-language/*.js
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 01 Mar 2025 15:18:31 +0200
+
+python-mkdocs (1.6.1+dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * d/gbp.conf: re enable lunr-languages library
+    this file need by testing mkdocs-static-i18n
+  * d/copyright: insert lunr-languages license
+
+ -- Karsten Schöke <karsten.schoeke@geobasis-bb.de>  Tue, 18 Feb 2025 11:25:34 +0100
+
+python-mkdocs (1.6.1+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove extraneous dependency on python3-pkg-resources (Closes: #1083664)
+
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 19 Jan 2025 00:09:07 +0100
+
+python-mkdocs (1.6.1+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Carsten Schoenert ]
+  * d/copyright: Adjust Files-Excluded for mkdocs >= 1.6.0
+  * d/gbp.conf: Tune filter list here too
+  * New upstream version 1.6.0+dfsg
+    (Closes: #1072850, #1068235, #1067156)
+  * Rebuild patch queue from patch-queue branch
+    Adjusted patch:
+    debian-hacks/Make-toc.html-look-better-with-default-Bootstrap-theme.patch
+    Renamed (and modified) patch:
+    debian-hacks/Do-not-assert-that-fonts-directory-exists.patch
+    -> debian/patches/debian-hacks/Do-not-assert-that-webfonts-directory-exists.patch
+  * d/rules: Clean out folder .mypy_cache in dh_clean
+  * d/control: Adjust to libjs-bootstrap5 in bin packages
+  * d/missing-sources: Add non minimized source files
+    Adding the non minimized sources
+    brand.css
+    fontawesome.css
+    solid.css
+    v4-font-face.css
+  * d/mkdocs.links: Updating the needed linking to files
+  * d/mkdocs-doc.links: Updating the needed linking accordingly
+  * d/README.source: Add information about minimized source
+  * d/control: Update list of required Depends for bin pkgs
+  * d/control: Bump Standards-Version to 4.7.0
+  * d/u/metadata: Set Documentation to project website
+  * d/control: Let Homepage point to the GitHub project
+  * d/mkdocs{,-doc}.lintian-overrides: Adjust the entries
+  * d/copyright: Extend information due new files and folders
+
+  [ Colin Watson ]
+  * New upstream version 1.6.1+dfsg.
+  * docs: Adjust embedded HTML for local browsing.
+  * Build-depend on python3-setuptools (closes: #1080750).
+  * Fix check-links autopkgtest for changes in 1.6.0.
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 26 Dec 2024 14:38:43 +0000
+
+python-mkdocs (1.5.3+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Nick Morrott ]
+  * dh_mkdocs: Ensure child process output is read before pipe fills up
+    (closes: #1081238)
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 04 Nov 2024 14:38:50 +0300
+
 python-mkdocs (1.5.3+dfsg-1) unstable; urgency=medium
 
   * Team Upload.
   * [efaace8] New upstream version 1.5.3+dfsg
+  * [c105ae3] Rebuild patch queue from patch-queue branch
+    Just refreshed the existing patches.
+  * [67999d0] d/mkdocs.lintian-overrides: Be more generic on versions
 
- -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 01 Oct 2023 19:50:09 +0200
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 01 Oct 2023 20:09:05 +0200
 
 python-mkdocs (1.5.2+dfsg-1) unstable; urgency=medium
 
