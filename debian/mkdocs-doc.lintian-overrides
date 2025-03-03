@@ -1,3 +1,21 @@
 # All the HTML files within mkdocs-doc have set the gtag value to 'None'.
 # Due this no Google Analytics will be used.
 mkdocs-doc: privacy-breach-generic [<script async src="https://www.googletagmanager.com/gtag/js?id=none">] (https://www.googletagmanager.com/gtag/js?id=none) [usr/share/doc/mkdocs/html/*.html]
+
+# All these fonts are not available within Debian yet.
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-brands-400.ttf.gz]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-brands-400.woff2]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-regular-400.ttf.gz]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-regular-400.woff2]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-solid-900.ttf.gz]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-solid-900.woff2]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-v4compatibility.ttf.gz]
+mkdocs-doc: font-in-non-font-package [usr/share/doc/mkdocs/html/webfonts/fa-v4compatibility.woff2]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-brands-400.ttf.gz]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-brands-400.woff2]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-regular-400.ttf.gz]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-regular-400.woff2]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-solid-900.ttf.gz]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-solid-900.woff2]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-v4compatibility.ttf.gz]
+mkdocs-doc: font-outside-font-dir [usr/share/doc/mkdocs/html/webfonts/fa-v4compatibility.woff2]

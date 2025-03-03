@@ -1,2 +1,4 @@
 # There is no upstream signature we could use.
 python-mkdocs source: debian-watch-does-not-check-openpgp-signature [debian/watch]
+# The source contains long lines with phrases of the natural language.
+python-mkdocs source: source-is-missing [mkdocs/contrib/search/lunr-language/*.js]

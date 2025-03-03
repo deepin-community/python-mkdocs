@@ -10,10 +10,10 @@ Forwarded: Not-Needed
  1 file changed, 2 insertions(+)
 
 diff --git a/mkdocs.yml b/mkdocs.yml
-index f857075..2c7b751 100644
+index 7246e14..5641e68 100644
 --- a/mkdocs.yml
 +++ b/mkdocs.yml
-@@ -72,3 +72,5 @@ plugins:
+@@ -77,3 +77,5 @@ plugins:
  
  watch:
    - mkdocs

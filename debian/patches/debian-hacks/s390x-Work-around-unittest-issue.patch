@@ -12,7 +12,7 @@ Forwarded: Not-Needed
  1 file changed, 3 insertions(+)
 
 diff --git a/mkdocs/tests/livereload_tests.py b/mkdocs/tests/livereload_tests.py
-index db6b791..1934ed6 100644
+index b19009a..e7010e0 100644
 --- a/mkdocs/tests/livereload_tests.py
 +++ b/mkdocs/tests/livereload_tests.py
 @@ -3,6 +3,7 @@
@@ -23,7 +23,7 @@ index db6b791..1934ed6 100644
  import sys
  import threading
  import time
-@@ -111,6 +112,8 @@ class BuildTests(unittest.TestCase):
+@@ -113,6 +114,8 @@ class BuildTests(unittest.TestCase):
  
      @tempdir({"foo.docs": "a"})
      @tempdir({"foo.site": "original"})
